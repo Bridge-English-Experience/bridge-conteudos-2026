@@ -21,6 +21,35 @@
   .logo-sub{font-size:11px;color:rgba(255,255,255,0.65);letter-spacing:0.08em;margin-top:-4px;text-align:center}
   .header h1{font-size:20px;font-weight:800;color:var(--white);margin-bottom:4px}
   .header .tagline{font-size:13px;color:rgba(255,255,255,0.75)}
+  .intro-card{background:var(--white);border-radius:16px;padding:1.5rem;margin-bottom:1.75rem;border-left:5px solid var(--green);font-size:14px;line-height:1.75}
+  .intro-card p+p{margin-top:0.75rem}
+  .month-block{margin-bottom:2rem}
+  .month-pill{display:inline-block;font-size:13px;font-weight:800;padding:5px 16px;border-radius:50px;color:var(--white);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px}
+  .pill-feb{background:var(--pink)}.pill-mar{background:var(--orange)}.pill-apr{background:var(--green)}
+  .pill-may{background:var(--blue)}.pill-jun{background:var(--yellow);color:var(--black)}
+  .month-desc{background:var(--white);border-radius:14px;padding:1rem 1.25rem;font-size:14px;line-height:1.7;margin-bottom:12px}
+  .month-desc strong{font-weight:700}
+  .content-box{background:var(--white);border-radius:14px;padding:1rem 1.25rem;margin-bottom:12px;font-size:13px;line-height:1.7}
+  .content-box-title{font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px}
+  .content-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem}
+  .content-col-label{font-weight:700;font-size:12px;margin-bottom:4px}
+  .content-list{list-style:none;padding:0}
+  .content-list li{padding:2px 0 2px 14px;position:relative;font-size:13px}
+  .content-list li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%}
+  .dot-feb li::before{background:var(--pink)}.dot-mar li::before{background:var(--orange)}
+  .dot-apr li::before{background:var(--green)}.dot-may li::before{background:var(--blue)}.dot-jun li::before{background:var(--yellow)}
+  .section-label{font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;opacity:0.45;margin:14px 0 8px}
+  .link-list{display:flex;flex-direction:column;gap:7px}
+  .link-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--white);border-radius:12px;text-decoration:none;color:var(--black);font-size:14px;font-weight:600;transition:opacity 0.12s}
+  .link-item:hover{opacity:0.75}
+  .link-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+  .link-label{flex:1;line-height:1.35}
+  .link-arrow{font-size:14px;font-weight:700;flex-shrink:0;opacity:0.35}
+  .divider{height:1px;background:rgba(0,0,0,0.07);margin:1.25rem 0}
+  .cta-strip{background:var(--orange);border-radius:16px;padding:1.5rem;margin-top:2rem;text-align:center;color:var(--white)}
+  .cta-strip p{font-size:14px;line-height:1.7;margin-bottom:1rem}
+  .cta-strip .sign{font-size:14px;font-weight:700}
+  @media(max-width:480px){.content-cols{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -45,6 +74,188 @@
     </div>
     <h1>Conteúdos Kids 1 — 2026</h1>
     <p class="tagline">Aqui você aprende o inglês com experiências e vivências!</p>
+  </div>
+  <div class="intro-card">
+    <p>Prezadas famílias,</p>
+    <p>Durante este semestre, nossos alunos do nível Kids 1 participaram de diversas experiências em inglês por meio de projetos, músicas, histórias, brincadeiras, jogos e atividades práticas, sempre respeitando a faixa etária e incentivando a comunicação de forma natural, significativa e divertida.</p>
+    <p>A seguir, compartilhamos os temas e conteúdos linguísticos trabalhados até o momento, além de sugestões de músicas e histórias que podem ser facilmente encontradas no YouTube.</p>
+  </div>
+
+  <!-- FEBRUARY -->
+  <div class="month-block">
+    <span class="month-pill pill-feb">February</span>
+    <div class="month-desc">Neste tema, os alunos exploraram <strong>informações pessoais, preferências, identidade e características individuais</strong>.</div>
+    <div class="content-box">
+      <div class="content-box-title">Conteúdos linguísticos &amp; vocabulário</div>
+      <div class="content-cols">
+        <div><div class="content-col-label">Estruturas</div><ul class="content-list dot-feb"><li>Wh-questions</li><li>Verbo to be</li><li>Preferências</li><li>Uso da 3ª pessoa</li></ul></div>
+        <div><div class="content-col-label">Vocabulário</div><ul class="content-list dot-feb"><li>Informações pessoais</li><li>Gostos e preferências</li><li>Identidade</li></ul></div>
+      </div>
+    </div>
+    <p class="section-label">🎵 Suggested songs</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=tVlcKp3bWH8" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">Hello Song — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=WENFvk0xixo" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">What's Your Name? — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=wgqRHulRuM8" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">If You're Happy and You Know It — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=CXpCZBLhm4o" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">This Is Me — Kidz Bop</span><span class="link-arrow">↗</span></a>
+    </div>
+    <p class="section-label">📚 Suggested stories</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=-K8wqweTpBM" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">I Like Myself! — Karen Beaumont</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=O3ORFbXFJsk" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">The Family Book — Todd Parr</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=Q9C7YGE0Nro" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">Only One You — Linda Kranz</span><span class="link-arrow">↗</span></a>
+    </div>
+    <div class="divider"></div>
+    <div class="month-desc">Os alunos também aprenderam a nomear <strong>materiais escolares</strong> e a fazer pedidos simples em inglês.</div>
+    <div class="content-box">
+      <div class="content-box-title">Conteúdos linguísticos &amp; vocabulário</div>
+      <div class="content-cols">
+        <div><div class="content-col-label">Estruturas</div><ul class="content-list dot-feb"><li>What is it? It's a…</li><li>Can I have the… please?</li></ul></div>
+        <div><div class="content-col-label">Vocabulário</div><ul class="content-list dot-feb"><li>School materials</li><li>Classroom language</li></ul></div>
+      </div>
+    </div>
+    <p class="section-label">🎵 Suggested songs</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=nDj0yCqCCh4" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">School Supplies Song — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=v1rBxf4VgaA" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">Clean Up Song — CoComelon</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=OaPF3_DhFy8" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">Please and Thank You Song — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+    </div>
+    <p class="section-label">📚 Suggested stories</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=9BM_ETP3UAQ" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">Pete the Cat: Rocking in My School Shoes</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=yFXHLa2AO1M" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">David Goes to School — David Shannon</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=rRtjYP_5_b8" target="_blank"><span class="link-dot" style="background:var(--pink)"></span><span class="link-label">The Pigeon HAS to Go to School! — Mo Willems</span><span class="link-arrow">↗</span></a>
+    </div>
+  </div>
+
+  <!-- MARCH -->
+  <div class="month-block">
+    <span class="month-pill pill-mar">March</span>
+    <div class="month-desc">Neste período, trabalhamos <strong>sentimentos, cores, atividades e esportes</strong>.</div>
+    <div class="content-box">
+      <div class="content-box-title">Conteúdos linguísticos &amp; vocabulário</div>
+      <div class="content-cols">
+        <div><div class="content-col-label">Estruturas</div><ul class="content-list dot-mar"><li>Verb + ing</li><li>Adjetivos</li><li>I feel… when I…</li></ul></div>
+        <div><div class="content-col-label">Vocabulário</div><ul class="content-list dot-mar"><li>Feelings</li><li>Colours</li><li>Activities &amp; sports</li><li>Five senses</li></ul></div>
+      </div>
+    </div>
+    <p class="section-label">🎵 Suggested songs</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=L1Os_F3dPjI" target="_blank"><span class="link-dot" style="background:var(--orange)"></span><span class="link-label">The Feelings Song — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=SLZcWGQQsmg" target="_blank"><span class="link-dot" style="background:var(--orange)"></span><span class="link-label">Rainbow Colors Song — The Singing Walrus</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=9pAt0rOGBcY" target="_blank"><span class="link-dot" style="background:var(--orange)"></span><span class="link-label">Walking Walking — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+    </div>
+    <p class="section-label">📚 Suggested stories</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=fKrKuaWPOGg" target="_blank"><span class="link-dot" style="background:var(--orange)"></span><span class="link-label">The Color Monster — Anna Llenas</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=R-EwTcBLmcA" target="_blank"><span class="link-dot" style="background:var(--orange)"></span><span class="link-label">Today I Feel Silly — Jamie Lee Curtis</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=3KDDZ3XDnK4" target="_blank"><span class="link-dot" style="background:var(--orange)"></span><span class="link-label">My Many Colored Days — Dr. Seuss</span><span class="link-arrow">↗</span></a>
+    </div>
+    <div class="divider"></div>
+    <div class="month-desc">Os alunos também exploraram <strong>alimentos e refeições do dia a dia</strong>.</div>
+    <div class="content-box">
+      <div class="content-box-title">Conteúdos linguísticos &amp; vocabulário</div>
+      <div class="content-cols">
+        <div><div class="content-col-label">Estruturas</div><ul class="content-list dot-mar"><li>How often…?</li><li>Advérbios de frequência</li><li>Perguntas sobre refeições</li></ul></div>
+        <div><div class="content-col-label">Vocabulário</div><ul class="content-list dot-mar"><li>Foods</li><li>Meals</li><li>Eating habits</li></ul></div>
+      </div>
+    </div>
+    <p class="section-label">🎵 Suggested songs</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=frN3nvhIHUk" target="_blank"><span class="link-dot" style="background:var(--orange)"></span><span class="link-label">Do You Like Broccoli Ice Cream? — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=e7n1dpBBBp4" target="_blank"><span class="link-dot" style="background:var(--orange)"></span><span class="link-label">What Do You Eat? — Dream English Kids</span><span class="link-arrow">↗</span></a>
+    </div>
+    <p class="section-label">📚 Suggested stories</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=Jr-SJj29Oxg" target="_blank"><span class="link-dot" style="background:var(--orange)"></span><span class="link-label">The Very Hungry Caterpillar — Eric Carle</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=3N8_qNGpFJA" target="_blank"><span class="link-dot" style="background:var(--orange)"></span><span class="link-label">Eating the Alphabet — Lois Ehlert</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=XS5cVV7tFZM" target="_blank"><span class="link-dot" style="background:var(--orange)"></span><span class="link-label">Dragons Love Tacos — Adam Rubin</span><span class="link-arrow">↗</span></a>
+    </div>
+  </div>
+
+  <!-- APRIL -->
+  <div class="month-block">
+    <span class="month-pill pill-apr">April</span>
+    <div class="month-desc">Neste tema, os alunos falaram sobre <strong>atividades da rotina, culinária, reciclagem e família</strong>.</div>
+    <div class="content-box">
+      <div class="content-box-title">Conteúdos linguísticos &amp; vocabulário</div>
+      <div class="content-cols">
+        <div><div class="content-col-label">Estruturas</div><ul class="content-list dot-apr"><li>How often…?</li><li>First… then…</li><li>Do you have…?</li><li>What's he/she like?</li></ul></div>
+        <div><div class="content-col-label">Vocabulário</div><ul class="content-list dot-apr"><li>Daily routine</li><li>Cooking procedures</li><li>Recycling materials</li><li>Family members</li></ul></div>
+      </div>
+    </div>
+    <p class="section-label">🎵 Suggested songs</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=1GDFa-nEzlg" target="_blank"><span class="link-dot" style="background:var(--green)"></span><span class="link-label">This Is the Way — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=p5c_W0RiQlI" target="_blank"><span class="link-dot" style="background:var(--green)"></span><span class="link-label">Reduce, Reuse, Recycle Song — The Kiboomers</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=kCka94jeGTk" target="_blank"><span class="link-dot" style="background:var(--green)"></span><span class="link-label">Finger Family Song — CoComelon</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=JMuBkB7VLrQ" target="_blank"><span class="link-dot" style="background:var(--green)"></span><span class="link-label">Family Members Song — The Singing Walrus</span><span class="link-arrow">↗</span></a>
+    </div>
+    <p class="section-label">📚 Suggested stories</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=bH9Hu1WRCEM" target="_blank"><span class="link-dot" style="background:var(--green)"></span><span class="link-label">Llama Llama Red Pajama — Anna Dewdney</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=0Zh-r3Mg2QM" target="_blank"><span class="link-dot" style="background:var(--green)"></span><span class="link-label">Michael Recycle — Ellie Bethel</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=O3ORFbXFJsk" target="_blank"><span class="link-dot" style="background:var(--green)"></span><span class="link-label">The Family Book — Todd Parr</span><span class="link-arrow">↗</span></a>
+    </div>
+  </div>
+
+  <!-- MAY -->
+  <div class="month-block">
+    <span class="month-pill pill-may">May</span>
+    <div class="month-desc">Neste mês, trabalhamos <strong>verbos de ação, esportes, partes do corpo e habilidades</strong>.</div>
+    <div class="content-box">
+      <div class="content-box-title">Conteúdos linguísticos &amp; vocabulário</div>
+      <div class="content-cols">
+        <div><div class="content-col-label">Estruturas</div><ul class="content-list dot-may"><li>Do you like to play…?</li><li>Yes, I do / No, I don't</li><li>I can clap with my hands.</li></ul></div>
+        <div><div class="content-col-label">Vocabulário</div><ul class="content-list dot-may"><li>Sports</li><li>Movements &amp; actions</li><li>Body parts</li><li>Abilities</li></ul></div>
+      </div>
+    </div>
+    <p class="section-label">🎵 Suggested songs</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=7EPhkBjDMJ8" target="_blank"><span class="link-dot" style="background:var(--blue)"></span><span class="link-label">The Sports Song — The Singing Walrus</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=n3VkBfT8uco" target="_blank"><span class="link-dot" style="background:var(--blue)"></span><span class="link-label">Can You Jump? — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=RuqvGiZi0qg" target="_blank"><span class="link-dot" style="background:var(--blue)"></span><span class="link-label">Head, Shoulders, Knees and Toes — Noodle &amp; Pals</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=eBVqcTEC3zQ" target="_blank"><span class="link-dot" style="background:var(--blue)"></span><span class="link-label">One Little Finger — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+    </div>
+    <p class="section-label">📚 Suggested stories</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=Px0sYQafqDs" target="_blank"><span class="link-dot" style="background:var(--blue)"></span><span class="link-label">Pete the Cat: Play Ball! — James Dean</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=QpCebCxrPVk" target="_blank"><span class="link-dot" style="background:var(--blue)"></span><span class="link-label">From Head to Toe — Eric Carle</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=3FOQatRMSRw" target="_blank"><span class="link-dot" style="background:var(--blue)"></span><span class="link-label">Hands Can — Cheryl Willis Hudson</span><span class="link-arrow">↗</span></a>
+    </div>
+  </div>
+
+  <!-- JUNE -->
+  <div class="month-block">
+    <span class="month-pill pill-jun">June</span>
+    <div class="month-desc">Até o final do semestre, trabalharemos <strong>animais marinhos e selvagens</strong>, além de <strong>cômodos da casa e ações da rotina</strong>.</div>
+    <div class="content-box">
+      <div class="content-box-title">Conteúdos linguísticos &amp; vocabulário</div>
+      <div class="content-cols">
+        <div><div class="content-col-label">Estruturas</div><ul class="content-list dot-jun"><li>Descrições simples</li><li>Ações e habitats</li><li>I sleep in my bedroom.</li></ul></div>
+        <div><div class="content-col-label">Vocabulário</div><ul class="content-list dot-jun"><li>Sea &amp; wild animals</li><li>Parts of the house</li><li>Household actions</li></ul></div>
+      </div>
+    </div>
+    <p class="section-label">🎵 Suggested songs</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=XqZsoesa55w" target="_blank"><span class="link-dot" style="background:var(--yellow)"></span><span class="link-label">Baby Shark — Pinkfong</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=GoSq-yZcJ-4" target="_blank"><span class="link-dot" style="background:var(--yellow)"></span><span class="link-label">Walking in the Jungle — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=lGZFNOXk9yA" target="_blank"><span class="link-dot" style="background:var(--yellow)"></span><span class="link-label">Slippery Fish — Super Simple Songs</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=1v_TA63yjRw" target="_blank"><span class="link-dot" style="background:var(--yellow)"></span><span class="link-label">The House Song — Dream English Kids</span><span class="link-arrow">↗</span></a>
+    </div>
+    <p class="section-label">📚 Suggested stories</p>
+    <div class="link-list">
+      <a class="link-item" href="https://www.youtube.com/watch?v=fHEJHLnFjMI" target="_blank"><span class="link-dot" style="background:var(--yellow)"></span><span class="link-label">Somebody Swallowed Stanley — Sarah Roberts</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=6HxBkOZqpJI" target="_blank"><span class="link-dot" style="background:var(--yellow)"></span><span class="link-label">Dear Zoo — Rod Campbell</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=tMACKTLvGDc" target="_blank"><span class="link-dot" style="background:var(--yellow)"></span><span class="link-label">Polar Bear, Polar Bear, What Do You Hear? — Eric Carle</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=P8ORJc4yw1s" target="_blank"><span class="link-dot" style="background:var(--yellow)"></span><span class="link-label">Commotion in the Ocean — Giles Andreae</span><span class="link-arrow">↗</span></a>
+      <a class="link-item" href="https://www.youtube.com/watch?v=qMKBuG0JRMY" target="_blank"><span class="link-dot" style="background:var(--yellow)"></span><span class="link-label">Goodnight Moon — Margaret Wise Brown</span><span class="link-arrow">↗</span></a>
+    </div>
+  </div>
+
+  <div class="cta-strip">
+    <p>O contato frequente com músicas, histórias e brincadeiras em inglês contribui muito para o desenvolvimento da compreensão oral, da familiaridade com o idioma e da confiança para se comunicar de forma natural. Agradecemos pela parceria e pela confiança!</p>
+    <div class="sign">Com carinho,<br>Equipe Pedagógica — Bridge English Experience</div>
   </div>
 </div>
 </body>
