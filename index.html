@@ -17,7 +17,7 @@
     --bg: #f9f8f6;
     --white: #ffffff;
     --black: #111111;
-    --border: rgba(0,0,0,0.1);
+    --border: rgba(0,0,0,0.09);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -30,7 +30,7 @@
   /* ── Top bar ── */
   .topbar {
     background: var(--blue);
-    padding: 1.5rem 2rem;
+    padding: 1.25rem 2rem;
     display: flex;
     align-items: center;
     gap: 14px;
@@ -48,31 +48,125 @@
   .topbar-info strong { color: var(--white); }
 
   /* ── Main ── */
-  .main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .main { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
 
-  .section-title {
+  /* ── Welcome hero ── */
+  .welcome-hero {
+    background: var(--blue);
+    border-radius: 22px;
+    padding: 2.25rem 2.5rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .welcome-hero::before {
+    content: '';
+    position: absolute;
+    right: -40px; top: -40px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .welcome-hero::after {
+    content: '';
+    position: absolute;
+    right: 60px; bottom: -60px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .welcome-year {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 10px;
+  }
+  .welcome-hero h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .welcome-hero p {
+    font-size: 14.5px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.75;
+    max-width: 560px;
+  }
+  .welcome-hero p + p { margin-top: 10px; }
+  .welcome-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .welcome-tag {
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.9);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 13px;
+    border-radius: 50px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── Info strip ── */
+  .info-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 2.5rem;
+  }
+  .info-card {
+    background: var(--white);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 1rem 1.1rem;
+    display: flex;
+    gap: 11px;
+    align-items: flex-start;
+  }
+  .info-icon { font-size: 22px; flex-shrink: 0; line-height: 1; margin-top: 1px; }
+  .info-card strong {
+    display: block;
     font-size: 13px;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 3px;
+  }
+  .info-card span {
+    font-size: 12.5px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    font-size: 11px;
     font-weight: 800;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--black);
-    opacity: 0.4;
-    margin-bottom: 1rem;
+    opacity: 0.38;
+    margin-bottom: 12px;
   }
 
-  /* ── Grid ── */
+  /* ── Cards grid ── */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 14px;
     margin-bottom: 3rem;
   }
 
   .card {
     background: var(--white);
-    border-radius: 16px;
+    border-radius: 18px;
     border: 1px solid var(--border);
-    padding: 1.25rem;
+    padding: 1.35rem;
     cursor: pointer;
     transition: transform 0.15s, box-shadow 0.15s;
     display: flex;
@@ -81,9 +175,14 @@
     text-align: left;
     width: 100%;
   }
-  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
   .card:active { transform: scale(0.98); }
 
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .card-badge {
     display: inline-block;
     font-size: 11px;
@@ -92,22 +191,6 @@
     border-radius: 50px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    width: fit-content;
-  }
-  .card-title { font-size: 16px; font-weight: 800; color: var(--black); }
-  .card-desc { font-size: 13px; color: #555; line-height: 1.5; flex: 1; }
-  .card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 4px;
-  }
-  .card-level {
-    font-size: 11px;
-    font-weight: 700;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
   }
   .card-arrow {
     width: 28px; height: 28px;
@@ -117,6 +200,32 @@
     font-weight: 700;
     flex-shrink: 0;
   }
+  .card-title { font-size: 18px; font-weight: 800; color: var(--black); }
+  .card-desc { font-size: 13px; color: #555; line-height: 1.55; }
+
+  .card-topics { display: flex; flex-direction: column; gap: 5px; }
+  .card-topic {
+    display: flex; gap: 8px; align-items: flex-start;
+    background: #f6f5f3; border-radius: 8px; padding: 7px 10px;
+  }
+  .card-topic-icon { font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+  .card-topic-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #888; }
+  .card-topic-detail { font-size: 12.5px; color: #333; line-height: 1.4; margin-top: 1px; }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    padding-top: 4px;
+    border-top: 1px solid var(--border);
+    margin-top: 2px;
+  }
+  .card-pill {
+    font-size: 11px; font-weight: 700; color: #666;
+    background: #f0f0f0; border-radius: 50px; padding: 3px 9px;
+  }
+  .card-months { margin-left: auto; font-size: 11px; font-weight: 700; color: #bbb; text-transform: uppercase; letter-spacing: 0.05em; }
 
   /* ── Overlay ── */
   .overlay {
@@ -130,7 +239,6 @@
     overflow-y: auto;
   }
   .overlay.open { display: flex; }
-
   .modal {
     background: var(--white);
     border-radius: 20px;
@@ -158,63 +266,17 @@
   }
   .modal-close:hover { background: #e0e0e0; }
   .modal-body { flex: 1; }
-  .modal-body iframe {
-    width: 100%; border: none;
-    min-height: 600px; display: block;
-  }
+  .modal-body iframe { width: 100%; border: none; min-height: 600px; display: block; }
 
-  @media (max-width: 540px) {
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
     .topbar { flex-wrap: wrap; gap: 8px; }
     .topbar-info { margin-left: 0; }
     .topbar-info p { text-align: left; }
+    .info-strip { grid-template-columns: 1fr; }
     .grid { grid-template-columns: 1fr; }
-  }
-
-  /* ── Welcome ── */
-  .welcome-wrap { margin-bottom: 2.5rem; }
-  .welcome-card {
-    background: var(--blue); border-radius: 20px;
-    padding: 1.75rem 2rem; margin-bottom: 1rem;
-    display: flex; gap: 1.25rem; align-items: flex-start;
-  }
-  .welcome-emoji { font-size: 32px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
-  .welcome-title { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 10px; }
-  .welcome-text p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.75; }
-  .welcome-text p + p { margin-top: 8px; }
-
-  .how-it-works {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
-  }
-  .how-item {
-    background: var(--white); border-radius: 14px; border: 1px solid var(--border);
-    padding: 1rem 1.1rem; display: flex; gap: 10px; align-items: flex-start;
-    font-size: 13px; line-height: 1.5; color: #444;
-  }
-  .how-item strong { display: block; color: var(--black); font-weight: 800; margin-bottom: 3px; font-size: 13px; }
-  .how-icon { font-size: 20px; flex-shrink: 0; }
-
-  /* ── Enriched cards ── */
-  .card-header-row {
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .card-topics { display: flex; flex-direction: column; gap: 6px; margin: 2px 0 4px; }
-  .card-topic {
-    display: flex; gap: 8px; align-items: flex-start;
-    background: #f6f5f3; border-radius: 8px; padding: 6px 10px;
-  }
-  .card-topic-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
-  .card-topic-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #666; }
-  .card-topic-detail { font-size: 12px; color: #444; line-height: 1.4; margin-top: 1px; }
-  .card-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
-  .card-count {
-    font-size: 11px; font-weight: 700; color: #666;
-    background: #f0f0f0; border-radius: 50px; padding: 3px 9px;
-  }
-  .card-level { margin-left: auto; font-size: 11px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; }
-
-  @media (max-width: 600px) {
-    .how-it-works { grid-template-columns: 1fr; }
-    .welcome-card { flex-direction: column; gap: 10px; }
+    .welcome-hero { padding: 1.75rem 1.5rem; }
+    .welcome-hero h1 { font-size: 22px; }
   }
 </style>
 </head>
@@ -245,37 +307,52 @@
   </div>
 </div>
 
+<!-- MAIN -->
+<div class="main">
 
-  <!-- WELCOME SECTION -->
-  <div class="welcome-wrap">
-    <div class="welcome-card">
-      <div class="welcome-emoji">👋</div>
-      <div class="welcome-text">
-        <h2 class="welcome-title">Olá, famílias!</h2>
-        <p>Aqui você encontra tudo o que foi explorado em inglês este semestre: os temas de cada mês, as músicas trabalhadas em aula e sugestões de histórias para continuar a vivência em casa.</p>
-        <p>Selecione a turma do seu filho para ver o conteúdo completo — com links diretos para o YouTube, prontinho para ouvir e assistir juntos! 🎶📖</p>
+  <!-- WELCOME HERO -->
+  <div class="welcome-hero">
+    <p class="welcome-year">1º Semestre · 2026</p>
+    <h1>Olá, famílias! 👋<br>Que semestre especial foi esse!</h1>
+    <p>Ao longo desses meses, nossos alunos mergulharam no inglês por meio de músicas, histórias, brincadeiras e projetos cheios de significado — sempre respeitando a faixa etária e tornando o aprendizado algo leve, divertido e real.</p>
+    <p>Aqui você encontra tudo o que foi trabalhado em cada turma: os temas por mês, as músicas usadas em aula e sugestões de histórias para continuar a vivência em casa. É só selecionar a turma do seu filho! 🎶📖</p>
+    <div class="welcome-tags">
+      <span class="welcome-tag">🎵 Músicas do semestre</span>
+      <span class="welcome-tag">📚 Histórias sugeridas</span>
+      <span class="welcome-tag">📅 Temas por mês</span>
+      <span class="welcome-tag">🔗 Links diretos para o YouTube</span>
+    </div>
+  </div>
+
+  <!-- INFO STRIP -->
+  <div class="info-strip">
+    <div class="info-card">
+      <span class="info-icon">📅</span>
+      <div>
+        <strong>Organizado por mês</strong>
+        <span>Confira o que foi trabalhado em cada período do semestre.</span>
       </div>
     </div>
-    <div class="how-it-works">
-      <div class="how-item">
-        <span class="how-icon">📅</span>
-        <div><strong>Organizado por mês</strong><br>Confira o que foi trabalhado em cada período do semestre.</div>
+    <div class="info-card">
+      <span class="info-icon">🎵</span>
+      <div>
+        <strong>Músicas sugeridas</strong>
+        <span>As mesmas que tocamos em aula — para continuar cantando em casa!</span>
       </div>
-      <div class="how-item">
-        <span class="how-icon">🎵</span>
-        <div><strong>Músicas sugeridas</strong><br>As mesmas que tocamos em aula — para continuar cantando em casa!</div>
-      </div>
-      <div class="how-item">
-        <span class="how-icon">📚</span>
-        <div><strong>Histórias indicadas</strong><br>Livros e contações que complementam cada tema do semestre.</div>
+    </div>
+    <div class="info-card">
+      <span class="info-icon">📚</span>
+      <div>
+        <strong>Histórias indicadas</strong>
+        <span>Livros e contações que complementam cada tema do semestre.</span>
       </div>
     </div>
   </div>
 
-<!-- MAIN -->
-<div class="main">
-  <p class="section-title">Selecione a turma</p>
+  <!-- GROUP CARDS -->
+  <p class="section-label">Selecione a turma</p>
   <div class="grid" id="grid"></div>
+
 </div>
 
 <!-- OVERLAY -->
@@ -293,38 +370,40 @@
 const artifacts = [
   {
     title: "Toddlers",
-    desc: "Para crianças de 2 a 4 anos — família, cores, números, corpo, roupas, formas, animais e transportes.",
+    desc: "Para crianças de 2 a 4 anos — aprendizado por meio de músicas, brincadeiras sensoriais e histórias com o que vivem no dia a dia.",
     badge: "2 – 4 anos",
     badgeBg: "#FBEAF0",
     badgeColor: "#993556",
     arrowBg: "#FBEAF0",
     arrowColor: "#993556",
-    months: "Fev · Mar · Abr · Mai · Jun · Jul",
+    months: "Fev – Jul",
     topics: [
       { icon: "🌸", label: "Fev – Mar", detail: "Família, alimentos, cores e números" },
-      { icon: "🌿", label: "Abril", detail: "Corpo, cotidiano e roupas" },
-      { icon: "💙", label: "Maio", detail: "Objetos pessoais, brinquedos e formas" },
+      { icon: "🌿", label: "Abril",     detail: "Partes do corpo, cotidiano e roupas" },
+      { icon: "💙", label: "Maio",      detail: "Objetos pessoais, brinquedos e formas" },
       { icon: "🧡", label: "Jun – Jul", detail: "Animais, natureza e transportes" }
     ],
-    counts: { songs: 22, stories: 18 },
+    songs: 22,
+    stories: 18,
     src: "toddlers.html"
   },
   {
     title: "Kids 1",
-    desc: "Identidade, materiais escolares, sentimentos, alimentos, rotina, família, esportes e animais.",
+    desc: "Comunicação desde o primeiro dia — os alunos exploraram temas do mundo deles com vocabulário real e estruturas progressivas.",
     badge: "Kids 1",
     badgeBg: "#E6F1FB",
     badgeColor: "#185FA5",
     arrowBg: "#E6F1FB",
     arrowColor: "#185FA5",
-    months: "Fev · Mar · Abr · Mai · Jun",
+    months: "Fev – Jun",
     topics: [
       { icon: "🌸", label: "Fevereiro", detail: "Identidade, preferências e materiais escolares" },
-      { icon: "🧡", label: "Março", detail: "Sentimentos, cores, esportes e alimentos" },
-      { icon: "🌿", label: "Abril", detail: "Rotina, culinária, reciclagem e família" },
-      { icon: "💙", label: "Mai – Jun", detail: "Habilidades, corpo e animais e casa" }
+      { icon: "🧡", label: "Março",     detail: "Sentimentos, cores, esportes e alimentos" },
+      { icon: "🌿", label: "Abril",     detail: "Rotina, culinária, reciclagem e família" },
+      { icon: "💙", label: "Mai – Jun", detail: "Habilidades, partes do corpo, animais e casa" }
     ],
-    counts: { songs: 19, stories: 21 },
+    songs: 19,
+    stories: 21,
     src: "kids1.html"
   }
 ];
@@ -350,7 +429,7 @@ artifacts.forEach(a => {
   `).join('');
 
   card.innerHTML = `
-    <div class="card-header-row">
+    <div class="card-top">
       <span class="card-badge" style="background:${a.badgeBg};color:${a.badgeColor}">${a.badge}</span>
       <div class="card-arrow" style="background:${a.arrowBg};color:${a.arrowColor}">↗</div>
     </div>
@@ -358,9 +437,9 @@ artifacts.forEach(a => {
     <div class="card-desc">${a.desc}</div>
     <div class="card-topics">${topicsHTML}</div>
     <div class="card-footer">
-      <span class="card-count">🎵 ${a.counts.songs} músicas</span>
-      <span class="card-count">📚 ${a.counts.stories} histórias</span>
-      <span class="card-level">${a.months}</span>
+      <span class="card-pill">🎵 ${a.songs} músicas</span>
+      <span class="card-pill">📚 ${a.stories} histórias</span>
+      <span class="card-months">${a.months}</span>
     </div>
   `;
 
@@ -384,6 +463,7 @@ function closeModal() {
 }
 closeBtn.addEventListener('click', closeModal);
 overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });</script>
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
 </body>
 </html>
