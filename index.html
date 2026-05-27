@@ -169,6 +169,53 @@
     .topbar-info p { text-align: left; }
     .grid { grid-template-columns: 1fr; }
   }
+
+  /* ── Welcome ── */
+  .welcome-wrap { margin-bottom: 2.5rem; }
+  .welcome-card {
+    background: var(--blue); border-radius: 20px;
+    padding: 1.75rem 2rem; margin-bottom: 1rem;
+    display: flex; gap: 1.25rem; align-items: flex-start;
+  }
+  .welcome-emoji { font-size: 32px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+  .welcome-title { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 10px; }
+  .welcome-text p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.75; }
+  .welcome-text p + p { margin-top: 8px; }
+
+  .how-it-works {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  }
+  .how-item {
+    background: var(--white); border-radius: 14px; border: 1px solid var(--border);
+    padding: 1rem 1.1rem; display: flex; gap: 10px; align-items: flex-start;
+    font-size: 13px; line-height: 1.5; color: #444;
+  }
+  .how-item strong { display: block; color: var(--black); font-weight: 800; margin-bottom: 3px; font-size: 13px; }
+  .how-icon { font-size: 20px; flex-shrink: 0; }
+
+  /* ── Enriched cards ── */
+  .card-header-row {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .card-topics { display: flex; flex-direction: column; gap: 6px; margin: 2px 0 4px; }
+  .card-topic {
+    display: flex; gap: 8px; align-items: flex-start;
+    background: #f6f5f3; border-radius: 8px; padding: 6px 10px;
+  }
+  .card-topic-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .card-topic-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #666; }
+  .card-topic-detail { font-size: 12px; color: #444; line-height: 1.4; margin-top: 1px; }
+  .card-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+  .card-count {
+    font-size: 11px; font-weight: 700; color: #666;
+    background: #f0f0f0; border-radius: 50px; padding: 3px 9px;
+  }
+  .card-level { margin-left: auto; font-size: 11px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  @media (max-width: 600px) {
+    .how-it-works { grid-template-columns: 1fr; }
+    .welcome-card { flex-direction: column; gap: 10px; }
+  }
 </style>
 </head>
 <body>
@@ -198,6 +245,33 @@
   </div>
 </div>
 
+
+  <!-- WELCOME SECTION -->
+  <div class="welcome-wrap">
+    <div class="welcome-card">
+      <div class="welcome-emoji">👋</div>
+      <div class="welcome-text">
+        <h2 class="welcome-title">Olá, famílias!</h2>
+        <p>Aqui você encontra tudo o que foi explorado em inglês este semestre: os temas de cada mês, as músicas trabalhadas em aula e sugestões de histórias para continuar a vivência em casa.</p>
+        <p>Selecione a turma do seu filho para ver o conteúdo completo — com links diretos para o YouTube, prontinho para ouvir e assistir juntos! 🎶📖</p>
+      </div>
+    </div>
+    <div class="how-it-works">
+      <div class="how-item">
+        <span class="how-icon">📅</span>
+        <div><strong>Organizado por mês</strong><br>Confira o que foi trabalhado em cada período do semestre.</div>
+      </div>
+      <div class="how-item">
+        <span class="how-icon">🎵</span>
+        <div><strong>Músicas sugeridas</strong><br>As mesmas que tocamos em aula — para continuar cantando em casa!</div>
+      </div>
+      <div class="how-item">
+        <span class="how-icon">📚</span>
+        <div><strong>Histórias indicadas</strong><br>Livros e contações que complementam cada tema do semestre.</div>
+      </div>
+    </div>
+  </div>
+
 <!-- MAIN -->
 <div class="main">
   <p class="section-title">Selecione a turma</p>
@@ -219,13 +293,20 @@
 const artifacts = [
   {
     title: "Toddlers",
-    desc: "Família, cores, números, corpo, roupas, formas, animais e transportes.",
+    desc: "Para crianças de 2 a 4 anos — família, cores, números, corpo, roupas, formas, animais e transportes.",
     badge: "2 – 4 anos",
     badgeBg: "#FBEAF0",
     badgeColor: "#993556",
     arrowBg: "#FBEAF0",
     arrowColor: "#993556",
     months: "Fev · Mar · Abr · Mai · Jun · Jul",
+    topics: [
+      { icon: "🌸", label: "Fev – Mar", detail: "Família, alimentos, cores e números" },
+      { icon: "🌿", label: "Abril", detail: "Corpo, cotidiano e roupas" },
+      { icon: "💙", label: "Maio", detail: "Objetos pessoais, brinquedos e formas" },
+      { icon: "🧡", label: "Jun – Jul", detail: "Animais, natureza e transportes" }
+    ],
+    counts: { songs: 22, stories: 18 },
     src: "toddlers.html"
   },
   {
@@ -237,6 +318,13 @@ const artifacts = [
     arrowBg: "#E6F1FB",
     arrowColor: "#185FA5",
     months: "Fev · Mar · Abr · Mai · Jun",
+    topics: [
+      { icon: "🌸", label: "Fevereiro", detail: "Identidade, preferências e materiais escolares" },
+      { icon: "🧡", label: "Março", detail: "Sentimentos, cores, esportes e alimentos" },
+      { icon: "🌿", label: "Abril", detail: "Rotina, culinária, reciclagem e família" },
+      { icon: "💙", label: "Mai – Jun", detail: "Habilidades, corpo e animais e casa" }
+    ],
+    counts: { songs: 19, stories: 21 },
     src: "kids1.html"
   }
 ];
@@ -250,15 +338,32 @@ const closeBtn = document.getElementById('close-btn');
 artifacts.forEach(a => {
   const card = document.createElement('button');
   card.className = 'card';
+
+  const topicsHTML = a.topics.map(t => `
+    <div class="card-topic">
+      <span class="card-topic-icon">${t.icon}</span>
+      <div>
+        <div class="card-topic-label">${t.label}</div>
+        <div class="card-topic-detail">${t.detail}</div>
+      </div>
+    </div>
+  `).join('');
+
   card.innerHTML = `
-    <span class="card-badge" style="background:${a.badgeBg};color:${a.badgeColor}">${a.badge}</span>
-    <div class="card-title">${a.title}</div>
-    <div class="card-desc">${a.desc}</div>
-    <div class="card-footer">
-      <span class="card-level">${a.months}</span>
+    <div class="card-header-row">
+      <span class="card-badge" style="background:${a.badgeBg};color:${a.badgeColor}">${a.badge}</span>
       <div class="card-arrow" style="background:${a.arrowBg};color:${a.arrowColor}">↗</div>
     </div>
+    <div class="card-title">${a.title}</div>
+    <div class="card-desc">${a.desc}</div>
+    <div class="card-topics">${topicsHTML}</div>
+    <div class="card-footer">
+      <span class="card-count">🎵 ${a.counts.songs} músicas</span>
+      <span class="card-count">📚 ${a.counts.stories} histórias</span>
+      <span class="card-level">${a.months}</span>
+    </div>
   `;
+
   card.addEventListener('click', () => {
     modalTitle.textContent = a.title + ' — 2026';
     const iframe = document.createElement('iframe');
@@ -279,7 +384,6 @@ function closeModal() {
 }
 closeBtn.addEventListener('click', closeModal);
 overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-</script>
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });</script>
 </body>
 </html>
